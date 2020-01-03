@@ -23,8 +23,21 @@ export default class SortingVisualizer extends Component {
     console.log(array);
   }
 
-  mergeSort() {
-
+  mergeSortVisualizer() {
+    const animations = mergeSort(this.state.array);
+    for (let i = 0; i < animations.length; i++) {
+      const {comparison, swap} = animations[i];
+      setTimeout(() => {
+        const arrayValueBars = document.querySelectorAll('.arrayValueBar');
+        console.log(arrayValueBars);
+        arrayValueBars[comparison[1]].style.backgroundColor = 'red';
+        arrayValueBars[comparison[0]].style.backgroundColor = 'red';
+        // setTimeout(()=>{
+        // arrayValueBars[comparison[1]].style.backgroundColor = 'turquoise';
+        // arrayValueBars[comparison[0]].style.backgroundColor = 'turquoise';
+        // });
+      }, i * 10);
+    };
   }
 
 	render() {
@@ -34,7 +47,7 @@ export default class SortingVisualizer extends Component {
       <div>
         <div className='buttonContainer'>
           <button onClick={() => this.resetArray()}>Generate New Array</button>
-          <button onClick={() => this.mergeSort()}>Merge Sort</button>
+          <button onClick={() => this.mergeSortVisualizer()}>Merge Sort</button>
         </div>
 
         <div className='arrayContainer'>

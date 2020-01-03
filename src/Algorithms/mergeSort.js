@@ -1,64 +1,81 @@
-const mergeSort = (array, p, r) => {
+const mergeSortHelper = (mainArray, p, r, auxiliaryArray, animations) => {
     if (p !== r) {
         // Divide
         const q = Math.floor((p+r)/2);
 
         // Conquer
-        mergeSort(array, p, q);
-        mergeSort(array, q+1, r);
+        mergeSortHelper(auxiliaryArray, p, q, mainArray, animations);
+        mergeSortHelper(auxiliaryArray, q+1, r, mainArray, animations);
 
         // Merge
-        merge(array, p, q, r);
+        merge(mainArray, p, q, r, auxiliaryArray, animations);
 
-        console.log(array);
-        return array;
+        // console.log(array);
     }
-
-    return array;
+    return animations;
 };
 
+const mergeSort = (array) => {
+  console.log('running merge sort');
+  const animations = [];
+  if (array.length <= 1) return array;
+  const auxiliaryArray = array.slice();
+  mergeSortHelper(array, 0, array.length-1, auxiliaryArray, animations);
+  return animations;
+};
 
-const merge = (array, p, q, r) => {
-    let lowHalf = [];
-    let highHalf = [];
+const merge = (mainArray, p, q, r, auxiliaryArray, animations) => {
+    // let lowHalf = [];
+    // let highHalf = [];
+    // let k = p;
+    //
+    // for (let i = 0; k <= q; i++, k++) {
+    //     lowHalf[i] = array[k];
+    // }
+    // for (let j = 0; k <= r; j++, k++) {
+    //     highHalf[j] = array[k];
+    // }
+
     let k = p;
-
-    for (let i = 0; k <= q; i++, k++) {
-        lowHalf[i] = array[k];
-    }
-    for (let j = 0; k <= r; j++, k++) {
-        highHalf[j] = array[k];
-    }
-
-    k = p;
-    let i = 0;
-    let j = 0;
+    let i = p;
+    let j = q+1;
 
 
-    while (i < lowHalf.length && j < highHalf.length) {
-        if (lowHalf[i] < highHalf[j]) {
-            array[k] = lowHalf[i];
-            i += 1;
+    while (i <= q && j <= r) {
+      const animation = {};
+      animation.comparison = [i, j];
+        if (auxiliaryArray[i] <= auxiliaryArray[j]) {
+          animation.swap = [k, i];
+          mainArray[k] = mainArray[i];
+          i += 1;
         } else {
-            array[k] = highHalf[j];
-            j += 1;
+          animation.swap = [k, j];
+          mainArray[k] = mainArray[j];
+          j += 1;
         }
         k += 1;
+        animations.push(animation);
     }
 
-    while (i < lowHalf.length) {
-        array[k] = lowHalf[i];
+    while (i <= q) {
+        animations.push({
+          comparison: [i, i],
+          swap: [k, i]
+        });
+        mainArray[k] = auxiliaryArray[i];
         i += 1;
         k +=1;
     }
 
-    while (j < highHalf.length) {
-        array[k] = highHalf[j];
+    while (j <= r) {
+        animations.push({
+          comparison: [j, j],
+          swap: [k,j]
+        })
+        mainArray[k] = auxiliaryArray[j];
         j += 1;
         k += 1;
     }
-
-    return array;
 };
 
 export default mergeSort;
