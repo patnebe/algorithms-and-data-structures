@@ -16,8 +16,8 @@ export default class SortingVisualizer extends Component {
 
   resetArray() {
     const array = [];
-    for (let i = 0; i < 25; i++) {
-      array.push(randomIntFromInterval(10, 100))
+    for (let i = 0; i < 70; i++) {
+      array.push(randomIntFromInterval(10, 200))
     }
     this.setState({array});
     console.log(array);
@@ -25,18 +25,43 @@ export default class SortingVisualizer extends Component {
 
   mergeSortVisualizer() {
     const animations = mergeSort(this.state.array);
-    for (let i = 0; i < animations.length; i++) {
-      const {comparison, swap} = animations[i];
-      setTimeout(() => {
-        const arrayValueBars = document.querySelectorAll('.arrayValueBar');
-        console.log(arrayValueBars);
-        arrayValueBars[comparison[1]].style.backgroundColor = 'red';
-        arrayValueBars[comparison[0]].style.backgroundColor = 'red';
-        // setTimeout(()=>{
-        // arrayValueBars[comparison[1]].style.backgroundColor = 'turquoise';
-        // arrayValueBars[comparison[0]].style.backgroundColor = 'turquoise';
-        // });
-      }, i * 10);
+    const newAnimations = [];
+    for (const animation of animations) {
+      newAnimations.push(animation.comparison);
+      newAnimations.push(animation.comparison);
+      newAnimations.push(animation.swap);
+    }
+
+    for (let i = 0; i < newAnimations.length; i++) {
+      const arrayValueBars = document.querySelectorAll('.arrayValueBar');
+      const isColorChange = i % 3 !== 2;
+      if (isColorChange) {
+        const [barOneIndex, barTwoIndex] = newAnimations[i];
+        const barOneStyle = arrayValueBars[barOneIndex].style;
+        const barTwoStyle = arrayValueBars[barTwoIndex].style;
+        const color = i % 3 === 0 ? 'red' : 'turquoise';
+        setTimeout(() => {
+          barOneStyle.backgroundColor = color;
+          barTwoStyle.backgroundColor = color;
+        }, i*5);
+      } else {
+        setTimeout(() => {
+          const [barOneIndex, newHeight] = newAnimations[i];
+          const barOneStyle = arrayValueBars[barOneIndex].style;
+          barOneStyle.height = `${newHeight}px`;
+        }, i*5);
+      }
+
+      // setTimeout(() => {
+      //
+      //   console.log(arrayValueBars);
+      //   arrayValueBars[comparison[1]].style.backgroundColor = 'red';
+      //   arrayValueBars[comparison[0]].style.backgroundColor = 'red';
+      //   // setTimeout(()=>{
+      //   // arrayValueBars[comparison[1]].style.backgroundColor = 'turquoise';
+      //   // arrayValueBars[comparison[0]].style.backgroundColor = 'turquoise';
+      //   // });
+      // }, i * 10);
     };
   }
 
