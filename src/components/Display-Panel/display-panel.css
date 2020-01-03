@@ -6,7 +6,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  
 }
 
 .innerPanel {
@@ -20,5 +19,23 @@
 
 .algorithmName {
   font-size: 1rem;
-  border: 1 px solid red;
+  /* border: 1px solid red; */
+  margin-top: 5px;
+}
+
+p {
+  color: white;
+}
+
+.arrayContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.buttonContainer {
+  width: 90%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
 }
