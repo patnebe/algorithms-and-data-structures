@@ -1,14 +1,15 @@
+/* eslint-disable indent */
 import React, { Component } from 'react';
 import mergeSort from '../../Algorithms/mergeSort';
 import './sortingVisualizer.css';
 
 export default class SortingVisualizer extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			array: []
-		};
-	}
+  constructor(props) {
+    super(props);
+    this.state = {
+      array: []
+    };
+  }
 
   componentDidMount() {
     this.resetArray();
@@ -17,9 +18,9 @@ export default class SortingVisualizer extends Component {
   resetArray() {
     const array = [];
     for (let i = 0; i < 70; i++) {
-      array.push(randomIntFromInterval(10, 200))
+      array.push(randomIntFromInterval(10, 200));
     }
-    this.setState({array});
+    this.setState({ array });
     console.log(array);
   }
 
@@ -43,32 +44,21 @@ export default class SortingVisualizer extends Component {
         setTimeout(() => {
           barOneStyle.backgroundColor = color;
           barTwoStyle.backgroundColor = color;
-        }, i*5);
+        }, i * 5);
       } else {
         setTimeout(() => {
           const [barOneIndex, newHeight] = newAnimations[i];
           const barOneStyle = arrayValueBars[barOneIndex].style;
           barOneStyle.height = `${newHeight}px`;
-        }, i*5);
+        }, i * 5);
       }
-
-      // setTimeout(() => {
-      //
-      //   console.log(arrayValueBars);
-      //   arrayValueBars[comparison[1]].style.backgroundColor = 'red';
-      //   arrayValueBars[comparison[0]].style.backgroundColor = 'red';
-      //   // setTimeout(()=>{
-      //   // arrayValueBars[comparison[1]].style.backgroundColor = 'turquoise';
-      //   // arrayValueBars[comparison[0]].style.backgroundColor = 'turquoise';
-      //   // });
-      // }, i * 10);
-    };
+    }
   }
 
-	render() {
-    const {array} = this.state;
+  render() {
+    const { array } = this.state;
 
-		return (
+    return (
       <div>
         <div className='buttonContainer'>
           <button onClick={() => this.resetArray()}>Generate New Array</button>
@@ -76,12 +66,12 @@ export default class SortingVisualizer extends Component {
         </div>
 
         <div className='arrayContainer'>
-          {array.map((value, index) => <div className='arrayValueBar' key={index} style={{height: `${value}px`}}></div>)}
+          {array.map((value, index) => <div className='arrayValueBar' key={index} style={{ height: `${value}px` }}></div>)}
         </div>
       </div>
     );
-	}
+  }
 }
 
 // From stack overflow
-const randomIntFromInterval = (min, max) => Math.floor(Math.random() * (max - min + 1)*2);
+const randomIntFromInterval = (min, max) => Math.floor(Math.random() * (max - min + 1) * 2);
