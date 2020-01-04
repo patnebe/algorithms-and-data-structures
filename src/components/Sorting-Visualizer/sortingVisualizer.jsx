@@ -21,23 +21,22 @@ export default class SortingVisualizer extends Component {
       array.push(randomIntFromInterval(10, 200));
     }
     this.setState({ array });
-    console.log(array);
   }
 
   mergeSortVisualizer() {
     const animations = mergeSort(this.state.array);
-    const newAnimations = [];
-    for (const animation of animations) {
-      newAnimations.push(animation.comparison);
-      newAnimations.push(animation.comparison);
-      newAnimations.push(animation.swap);
-    }
+    // const newAnimations = [];
+    // for (const animation of animations) {
+    //   newAnimations.push(animation.comparison);
+    //   newAnimations.push(animation.comparison);
+    //   newAnimations.push(animation.swap);
+    // }
 
-    for (let i = 0; i < newAnimations.length; i++) {
+    for (let i = 0; i < animations.length; i++) {
       const arrayValueBars = document.querySelectorAll('.arrayValueBar');
       const isColorChange = i % 3 !== 2;
       if (isColorChange) {
-        const [barOneIndex, barTwoIndex] = newAnimations[i];
+        const [barOneIndex, barTwoIndex] = animations[i];
         const barOneStyle = arrayValueBars[barOneIndex].style;
         const barTwoStyle = arrayValueBars[barTwoIndex].style;
         const color = i % 3 === 0 ? 'red' : 'turquoise';
@@ -47,7 +46,7 @@ export default class SortingVisualizer extends Component {
         }, i * 5);
       } else {
         setTimeout(() => {
-          const [barOneIndex, newHeight] = newAnimations[i];
+          const [barOneIndex, newHeight] = animations[i];
           const barOneStyle = arrayValueBars[barOneIndex].style;
           barOneStyle.height = `${newHeight}px`;
         }, i * 5);
