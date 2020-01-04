@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "95b91618c7f586ddc4a36c21333188f9",
+    "revision": "8beb656de7e7558763908be5001d8d0f",
     "url": "/algorithms-and-data-structures/index.html"
   },
   {
-    "revision": "ca4ce91f0cce0b4854a1",
-    "url": "/algorithms-and-data-structures/static/css/main.e10c0ec1.chunk.css"
+    "revision": "e226fa0ac0bc1ec994dd",
+    "url": "/algorithms-and-data-structures/static/css/main.03c64e42.chunk.css"
   },
   {
     "revision": "7f08dfa4bb93c2e6ca65",
@@ -16,15 +16,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/algorithms-and-data-structures/static/js/2.d8e3a867.chunk.js.LICENSE"
   },
   {
-    "revision": "ca4ce91f0cce0b4854a1",
-    "url": "/algorithms-and-data-structures/static/js/main.330c474e.chunk.js"
+    "revision": "e226fa0ac0bc1ec994dd",
+    "url": "/algorithms-and-data-structures/static/js/main.597d2f80.chunk.js"
   },
   {
     "revision": "19994942c2f38fa5ea5c",
     "url": "/algorithms-and-data-structures/static/js/runtime-main.3d29d2ec.js"
   },
   {
-    "revision": "5d5d9eefa31e5e13a6610d9fa7a283bb",
-    "url": "/algorithms-and-data-structures/static/media/logo.5d5d9eef.svg"
+    "revision": "ee7cd8ed2dcec943251eb2763684fc6f",
+    "url": "/algorithms-and-data-structures/static/media/logo.ee7cd8ed.svg"
   }
 ]);
