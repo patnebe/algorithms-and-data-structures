@@ -9,30 +9,58 @@ button:hover{
   margin-right: auto;
   margin-top: 30px;
   width: 100%;
+  box-sizing: border-box;
+}
+
+.mainContainer {
+  margin-top: 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+.visualizationDisplay {
+  margin-top: 0px;
 }
 
 .arrayContainer {
+  box-sizing: border-box;
   width: 100%;
+  max-width: 530px;
   display: flex;
   flex-direction: row;
-  margin-top: 10vh;
   justify-content: center;
   align-items: baseline;
   border: 1px solid black;
   padding-left: 20px;
   padding-right: 20px;
-  padding-top: 20px;
+  padding-top: 60px;
+  /* position: relative; */
+  margin-top: -30px;
+}
+
+.sortingStatus {
+  max-width: 100px;
+  align-self: baseline;
+  border: 0px solid white;
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .arrayValueBar {
   width: 5px;
   margin: 0px 1px;
   background-color: gray;
+  max-height: 250px;
 }
 
 .buttonContainer {
   display: flex;
   justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 5px;
 }
 
 .resetArrayButton {
@@ -43,13 +71,14 @@ button:hover{
   box-sizing: border-box;
   box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
-  font-family: Roboto;
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 0.85rem;
   line-height: 12px;
   /* identical to box height */
   color: #FF6464;
+  margin-top: 15px;
 }
 
 .resetArrayButton:hover {
@@ -65,7 +94,7 @@ button:hover{
   box-sizing: border-box;
   box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
-  font-family: Roboto;
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 0.85rem;
@@ -74,6 +103,7 @@ button:hover{
   color: #ffffff;
   padding-left: 20px;
   padding-right: 20px;
+  margin-top: 15px;
 }
 
 .visualizeSortButton:hover {

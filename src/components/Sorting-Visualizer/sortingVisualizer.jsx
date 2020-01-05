@@ -21,7 +21,7 @@ export default class SortingVisualizer extends Component {
 
   resetArray() {
     const array = [];
-    for (let i = 0; i < 80; i++) {
+    for (let i = 0; i < 40; i++) {
       array.push(randomIntFromInterval(15, 200));
     }
     this.setState({ array });
@@ -49,12 +49,13 @@ export default class SortingVisualizer extends Component {
         const barOneStyle = arrayValueBars[barOneIndex].style;
         const barTwoStyle = arrayValueBars[barTwoIndex].style;
         const color = i % 3 === 0 ? 'pink' : 'turquoise';
-        setTimeout(() => {
+        this.id = setTimeout(() => {
           barOneStyle.backgroundColor = color;
           barTwoStyle.backgroundColor = color;
         }, i * 25);
       } else {
-        setTimeout(() => {
+
+        this.id = setTimeout(() => {
           const [barOneIndex, newHeight] = animations[i];
           const barOneStyle = arrayValueBars[barOneIndex].style;
           barOneStyle.height = `${newHeight}px`;
@@ -72,27 +73,30 @@ export default class SortingVisualizer extends Component {
     }
   }
 
-  sortingStatus() {
-    if (this.currentlySorting) {
-      return 'Currently sorting';
-    } else if (this.state.arrayIsSorted) {
-      return 'Sorted';
-    } else {
-      return 'Not sorted';
-    }
-  }
+  // sortingStatus() {
+  //   if (this.currentlySorting) {
+  //     return 'Currently sorting';
+  //   } else if (this.state.arrayIsSorted) {
+  //     return 'Sorted';
+  //   } else {
+  //     return 'Not sorted';
+  //   }
+  // }
 
   render() {
     const { array } = this.state;
 
     return (
       <div className='mainContainer'>
-        <div className='arrayContainer'>
-          {array.map((value, index) => <div className='arrayValueBar' key={index} style={{ height: `${value}px` }}></div>)}
-        </div>
-        <div className='buttonContainer'>
-          <button className='resetArrayButton' onClick={() => this.resetArray()}>Reset array</button>
-          <button className='visualizeSortButton' onClick={() => this.mergeSortVisualizer()}>Visualize merge sort</button>
+        <div className='visualizationDisplay'>
+          <div className='sortingStatus'></div>
+          <div className='arrayContainer'>
+            {array.map((value, index) => <div className='arrayValueBar' key={index} style={{ height: `${value}px` }}></div>)}
+          </div>
+          <div className='buttonContainer'>
+            <button className='resetArrayButton' onClick={() => this.resetArray()}>Reset array</button>
+            <button className='visualizeSortButton' onClick={() => this.mergeSortVisualizer()}>Visualize merge sort</button>
+          </div>
         </div>
       </div>
     );
@@ -100,4 +104,4 @@ export default class SortingVisualizer extends Component {
 }
 
 // From stack overflow
-const randomIntFromInterval = (min, max) => Math.floor(Math.random() * (max - min + 1) * 2);
+const randomIntFromInterval = (min, max) => Math.floor(Math.random() * (max - min + 1) * 1.5);

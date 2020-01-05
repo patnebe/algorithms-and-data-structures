@@ -25,8 +25,8 @@ export default class ViewAlgorithm extends Component {
       <div>
         <nav className="algoDetailsNavbar">
           <button className="backButton"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M4.76562 7.8125L1.95312 5L4.76562 2.1875" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-            <path d="M2.34375 5H8.04688" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M4.76562 7.8125L1.95312 5L4.76562 2.1875" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M2.34375 5H8.04688" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg><span>&nbsp; Back</span></button>
         </nav>
         <div className="algorithmDetails">
