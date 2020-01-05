@@ -83,9 +83,6 @@ export default class SortingVisualizer extends Component {
 
     return (
       <div>
-        <div>
-          {this.sortingStatus()}
-        </div>
         <div className='buttonContainer'>
           <button onClick={() => this.resetArray()}>Generate New Array</button>
           <button onClick={() => this.mergeSortVisualizer()}>Merge Sort</button>

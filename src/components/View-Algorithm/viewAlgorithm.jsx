@@ -19,22 +19,44 @@ export default class ViewAlgorithm extends Component {
 
 
   render() {
-    const { array } = this.state;
+    // const { array } = this.state;
 
     return (
       <div>
-        <Router>
-          <div className='displayPanelContainer'>
-            <Switch>
+        <nav className="algoDetailsNavbar">
+          <button className="backButton"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4.76562 7.8125L1.95312 5L4.76562 2.1875" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M2.34375 5H8.04688" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>&nbsp; Back</button>
+        </nav>
+        <div className="algorithmDetails">
+
+          <main>
+            <div className="algorithmName">{this.props.algorithmName}</div>
+            <section className="visualizationPanel">
+              <SortingVisualizer />
+            </section>
+            <section className="algorithmInfo">
+              <div className="conceptualOverview">
+                <div className="title">Conceptual overview</div>
+                <div className="details">Bla bla bla</div>
+              </div>
+              <div className="complexity">
+                <div className="title">Complexity</div>
+                <div className="details">O(n) time, O(n) space</div>
+              </div>
+            </section>
+          </main>
+        </div>
+      </div>
+    );
+  }
+}
+
+{/* <Switch>
               <Route
                 exact
                 path={'/sorting-algorithms'}
                 render={() => <SortingVisualizer />}
               />
-            </Switch>
-          </div>
-        </Router>
-      </div>
-    );
-  }
-}
+            </Switch> */}

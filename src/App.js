@@ -10,7 +10,7 @@ import ViewAlgorithm from './components/View-Algorithm/viewAlgorithm';
 function App() {
   return (
     <div className="App">
-      <ViewAlgorithm />
+      <ViewAlgorithm algorithmName="Merge Sort" />
     </div>
   );
 }

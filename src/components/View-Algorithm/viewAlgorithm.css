@@ -1,41 +1,74 @@
-.displayPanelContainer {
+.algorithmDetails {
   width: 80%;
-  /* max-width: 300px; */
-  /* height: 300px; */
-  border: 1px solid red;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  margin-top: 80px;;
 }
 
-.innerPanel {
-  width: 90%;
-  height: 250px;
-  border: 1px solid white;
-  margin-top: 15px;
-  margin-bottom: 5px;
-  /* background-color: white; */
+.algoDetailsNavbar {
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 60px;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.15);
+  background-color: white;
+}
+
+.algoDetailsNavbar .backButton {
+  border: 0px;
+  background-color: white;
+  margin-left: 5%;
+  height: 30px;
+  font-family: Roboto;
+}
+
+.algoDetailsNavbar .backButton:hover {
+  /* color: #18A0FB; */
+  border: 1px solid #18A0FB;
+  border-radius: 5px;
+}
+
+.algorithmInfo {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  margin-top: 30px;
+  /* border: 1px solid red; */
 }
 
 .algorithmName {
-  font-size: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.conceptualOverview {
+  width: 100%;
+  /* border: 1px solid turquoise; */
+  margin: 0px 0px 30px 0px;
+}
+
+.complexity {
+  width: 100%;
+  /* border: 1px solid turquoise; */
+  margin: 0px 0px 30px 0px;
+}
+
+.title {
   /* border: 1px solid red; */
-  margin-top: 5px;
+  text-align: left;
+  font-family: Lato;
+  font-size: 1rem;
+  margin-top: 0px;
+  font-weight: bold;
+  color: rgb(58, 66, 68);
 }
 
-p {
-  color: white;
-}
-
-.arrayContainer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
-.buttonContainer {
-  width: 90%;
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
+.details {
+  /* border: 1px solid red; */
+  text-align: left;
+  margin-top: 15px;
+  color: #4D4949;
+  font-family: Lato;
+  font-size: 0.9rem;
 }
