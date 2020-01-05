@@ -25,6 +25,10 @@ export default class SortingVisualizer extends Component {
       array.push(randomIntFromInterval(15, 200));
     }
     this.setState({ array });
+    const arrayValueBars = document.querySelectorAll('.arrayValueBar');
+    arrayValueBars.forEach((eachBar) => {
+      eachBar.style.backgroundColor = 'gray';
+    });
   }
 
   mergeSortVisualizer() {
@@ -48,13 +52,13 @@ export default class SortingVisualizer extends Component {
         setTimeout(() => {
           barOneStyle.backgroundColor = color;
           barTwoStyle.backgroundColor = color;
-        }, i * 50);
+        }, i * 25);
       } else {
         setTimeout(() => {
           const [barOneIndex, newHeight] = animations[i];
           const barOneStyle = arrayValueBars[barOneIndex].style;
           barOneStyle.height = `${newHeight}px`;
-        }, i * 50);
+        }, i * 25);
       }
 
       // if (i === animations.length - 1) {
@@ -82,14 +86,13 @@ export default class SortingVisualizer extends Component {
     const { array } = this.state;
 
     return (
-      <div>
-        <div className='buttonContainer'>
-          <button onClick={() => this.resetArray()}>Generate New Array</button>
-          <button onClick={() => this.mergeSortVisualizer()}>Merge Sort</button>
-        </div>
-
+      <div className='mainContainer'>
         <div className='arrayContainer'>
           {array.map((value, index) => <div className='arrayValueBar' key={index} style={{ height: `${value}px` }}></div>)}
+        </div>
+        <div className='buttonContainer'>
+          <button className='resetArrayButton' onClick={() => this.resetArray()}>Reset array</button>
+          <button className='visualizeSortButton' onClick={() => this.mergeSortVisualizer()}>Visualize merge sort</button>
         </div>
       </div>
     );

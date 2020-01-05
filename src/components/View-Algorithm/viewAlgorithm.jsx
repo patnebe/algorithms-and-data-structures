@@ -27,7 +27,7 @@ export default class ViewAlgorithm extends Component {
           <button className="backButton"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M4.76562 7.8125L1.95312 5L4.76562 2.1875" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
             <path d="M2.34375 5H8.04688" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>&nbsp; Back</button>
+          </svg><span>&nbsp; Back</span></button>
         </nav>
         <div className="algorithmDetails">
 
@@ -39,11 +39,11 @@ export default class ViewAlgorithm extends Component {
             <section className="algorithmInfo">
               <div className="conceptualOverview">
                 <div className="title">Conceptual overview</div>
-                <div className="details">Bla bla bla</div>
+                <div className="details">Add this.....</div>
               </div>
               <div className="complexity">
                 <div className="title">Complexity</div>
-                <div className="details">O(n) time, O(n) space</div>
+                <div className="details">O(nlogn) time</div>
               </div>
             </section>
           </main>

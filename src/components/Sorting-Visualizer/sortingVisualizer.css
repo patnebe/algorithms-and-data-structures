@@ -1,9 +1,14 @@
-div {
+button:hover{
+  cursor: pointer;
+}
+
+.mainContainer, div {
   /* background-color:; */
   /* border: 1px solid red; */
   margin-left: auto;
   margin-right: auto;
   margin-top: 30px;
+  width: 100%;
 }
 
 .arrayContainer {
@@ -13,6 +18,10 @@ div {
   margin-top: 10vh;
   justify-content: center;
   align-items: baseline;
+  border: 1px solid black;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
 }
 
 .arrayValueBar {
@@ -24,4 +33,49 @@ div {
 .buttonContainer {
   display: flex;
   justify-content: space-around;
+}
+
+.resetArrayButton {
+  background: #FFFFFF;
+  width: 120px;
+  height: 35px;
+  border: 1px solid #FF6464;
+  box-sizing: border-box;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 0.85rem;
+  line-height: 12px;
+  /* identical to box height */
+  color: #FF6464;
+}
+
+.resetArrayButton:hover {
+  background: #FF6464;
+  color: #FFFFFF;
+}
+
+.visualizeSortButton {
+  background: #18A0FB;;
+  /* width: 160px; */
+  height: 35px;
+  border: 1px solid #18A0FB;
+  box-sizing: border-box;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 0.85rem;
+  line-height: 12px;
+  /* identical to box height */
+  color: #ffffff;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.visualizeSortButton:hover {
+  background: #1C94E5;
 }
