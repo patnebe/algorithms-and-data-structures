@@ -113,3 +113,12 @@ button:hover{
 .visualizeSortButton:hover {
   background: #1C94E5;
 }
+
+@media screen and (max-width: 500px) {
+  .legend {
+    display: none;
+  }
+  .arrayContainer {
+    margin-top: 30px;
+  }
+}
