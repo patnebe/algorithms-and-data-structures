@@ -1,4 +1,6 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+
+This project was inspired by [https://github.com/clementmihailescu/Sorting-Visualizer-Tutorial](https://github.com/clementmihailescu/Sorting-Visualizer-Tutorial)
 
 ## Available Scripts
 
