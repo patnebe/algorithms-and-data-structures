@@ -89,7 +89,7 @@ export default class SortingVisualizer extends Component {
     return (
       <div className='mainContainer'>
         <div className='visualizationDisplay'>
-          <div className='sortingStatus'></div>
+          <div className='legend'>The height of the bars = numbers in the generated array</div>
           <div className='arrayContainer'>
             {array.map((value, index) => <div className='arrayValueBar' key={index} style={{ height: `${value}px` }}></div>)}
           </div>

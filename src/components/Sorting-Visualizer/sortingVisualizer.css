@@ -48,6 +48,10 @@ button:hover{
   justify-content: center;
 }
 
+.legend {
+  font-size: 0.8rem;
+}
+
 .arrayValueBar {
   width: 5px;
   margin: 0px 1px;
