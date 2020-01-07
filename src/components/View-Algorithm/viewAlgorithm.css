@@ -75,10 +75,11 @@ main {
 
 .details {
   /* border: 1px solid red; */
-  text-align: left;
+  text-align: justify;
   margin-top: 15px;
   color: #4D4949;
   font-family: 'Lato', sans-serif;
   font-size: 0.9rem;
   line-height: 1.2rem;
+
 }
